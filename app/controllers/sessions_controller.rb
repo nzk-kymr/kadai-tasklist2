@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
-  def new
-  end
-
+  
+  
+  
   def create
     email = params[:session][:email].downcase
     password = params[:session][:password]
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   end
 
   private
-
+  
   def login(email, password)
     @user = User.find_by(email: email)
     if @user && @user.authenticate(password)
@@ -33,4 +33,7 @@ class SessionsController < ApplicationController
       return false
     end
   end
+  
+  
+  
 end
